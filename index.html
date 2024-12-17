@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Images Layout</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Makes it responsive */
+            gap: 20px; /* Space between images */
+            justify-content: center;
+            max-width: 800px;
+        }
+
+        .image-box {
+            flex: 1 1 calc(50% - 20px); /* Makes each image take half space with gap adjustment */
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 600px) {
+            .image-box {
+                flex: 1 1 100%; /* Images stack vertically on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-box">
+            <img src="image.png" alt="Image 1">
+        </div>
+        <div class="image-box">
+            <img src="image.png" alt="Image 1">
+        </div>
+    </div>
+</body>
+</html>
